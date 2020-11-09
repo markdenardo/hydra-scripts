@@ -26,3 +26,30 @@ osc(1,1,1).repeatX(1, 0.1).pixelate(11).scale(0.1, 1).kaleid(8).colorama(100).sa
 
 a.setSmooth(23);
 noise(1,0.1).pixelate(1,1).scale(0.1, 11).color(0.1,0.01,1).rotate(1,1).kaleid(3).out(o0);
+
+//using screen capture and filtering together
+s1.initScreen()
+src(s1).out(o1)
+a.setSmooth(23);
+osc(0.612, 1, 1).pixelate(1.571, (() => (a.fft[1] * 4)))
+    .scale(0.1, 1)
+    .color(1.418, 3.808, 36.607)
+    .kaleid(3.265).rotate(1, 1)
+    .saturate(({ time }) => Math.sin(time) * 10)
+    .modulate(o1)
+    .modulate(o0)
+    .out(o0);
+
+
+s1.initScreen();
+src(s1).out(o1);
+src(s2).out(o2);
+a.setSmooth(20);
+osc(0.612, 1, (() => a.fft[2] * 4)).pixelate(1.571, (() => (a.fft[1] * 4)))
+    .scale(0.1, 1)
+    .color((() => a.fft[0] * 10), 3.808, 36.607)
+    .kaleid(3.265).rotate(1, 1)
+    .saturate(({ time }) => Math.sin(time) * 10)
+    .modulate(o1)
+    .modulate(o0)
+    .out(o0);
