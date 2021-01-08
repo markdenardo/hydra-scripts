@@ -1,0 +1,1 @@
+This is a set of hydra scripts, meant to serve as a notepad, in the hopes of coming up with new and original recipies to share w the community. WIP
