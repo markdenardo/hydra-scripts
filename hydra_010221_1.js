@@ -13,6 +13,7 @@ voronoi(1,2,1).rotate(10,()=>a.fft[1]).modulate(o2).blend(o0).out(o3)
 
 render(o2)
 
+osc().out()
 
 // a.show()
 // a.setBins(3)
