@@ -1,0 +1,10 @@
+a.show()
+
+shape(()=>a.fft[2]).repeat(1000,3).modulate(o1).modulate(o0).rotate(1,1).out(o0)
+
+s1.initScreen()
+src(s1).modulate(01).out(o1)
+
+src(o0).modulate(o0).out(o2)
+
+render(o2)
